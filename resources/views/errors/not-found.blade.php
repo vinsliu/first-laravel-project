@@ -1,3 +1,10 @@
-<div>
-    <h1>Page non trouvée</h1>
-</div>
+<!-- resources/views/errors/not-found.blade.php -->
+@extends('layouts.app')
+
+@section('title', '404')
+
+@section('content')
+
+<h2>Page non trouvée</h2>
+
+@endsection
