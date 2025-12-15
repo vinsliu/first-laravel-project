@@ -9,5 +9,5 @@ Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('article.details');
 
 Route::fallback(function () {
-    return view('not-found');
+    return view('errors.not-found');
 });
