@@ -5,7 +5,7 @@
 
 @section('content')
 
-<h2>Bienvenue sur la page d’accueil</h2>
+<h2>Bienvenue sur le site de {{ $name }}</h2>
 <p>Ceci est le contenu principal de la page.</p>
 
 @foreach ($articles as $title => $description)

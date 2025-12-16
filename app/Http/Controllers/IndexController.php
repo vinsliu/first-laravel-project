@@ -14,6 +14,6 @@ class IndexController extends Controller
             'Télétravail' => 'Plus de liberté, mais aussi plus de solitude.'
         ];
 
-        return view('welcome', ['articles' => $articles]);
+        return view('welcome', ['name' => 'Vincent', 'articles' => $articles]);
     }
 }
