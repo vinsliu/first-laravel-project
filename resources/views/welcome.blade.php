@@ -12,7 +12,7 @@
 @if ($loop->last)
 @break
 @endif
-<a href="/articles/{{ $article->id }}">
+<a href="{{ route('article.details', ['id' => $article->id]) }}">
     <x-article title="{{ $article->title }}" description="{{ Str::limit($article->description, 30) }}" />
 </a>
 @endforeach

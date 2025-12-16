@@ -11,7 +11,9 @@ class ArticleController extends Controller
     {
         $article = Article::find($id);
 
-        return view('pages.article-details', ['id' => $article->id, 'title' => $article->title, 'description' => $article->description]);
+        if (!$article) return view('errors.not-found');
+
+        return view('pages.article-details', ['article' => $article]);
     }
 
     public static function create()
@@ -33,21 +35,33 @@ class ArticleController extends Controller
             'description' => 'Plus de liberté, mais aussi plus de solitude.',
             'is_active' => true
         ]);
+
+        return 'Les articles ont été créés.';
     }
 
     public static function update($id)
     {
         $article = Article::find($id);
+
+        if (!$article) return "Article $id introuvable.";
+
         $article->update([
             'title' => 'Article modifié',
             'description' => 'Description modifiée',
             'is_active' => true
         ]);
+
+        return "Article $id modifié.";
     }
 
     public static function delete($id)
     {
         $article = Article::find($id);
+
+        if (!$article) return "Article $id introuvable.";
+
         $article->delete();
+
+        return "Article $id supprimé.";
     }
 }
