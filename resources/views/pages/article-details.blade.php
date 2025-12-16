@@ -5,7 +5,6 @@
 
 @section('content')
 
-<h2>Article {{ $id }}</h2>
-<p>Détails de l'article {{ $id }}</p>
+<x-article title="{{ $title }}" description="{{ $description }}" />
 
 @endsection

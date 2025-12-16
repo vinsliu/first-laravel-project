@@ -8,11 +8,13 @@
 <h2>Bienvenue sur le site de {{ $name }}</h2>
 <p>Ceci est le contenu principal de la page.</p>
 
-@foreach ($articles as $title => $description)
+@foreach ($articles as $article)
 @if ($loop->last)
 @break
 @endif
-<x-article title="{{ $title }}" description="{{ $description }}" />
+<a href="/articles/{{ $article->id }}">
+    <x-article title="{{ $article->title }}" description="{{ Str::limit($article->description, 30) }}" />
+</a>
 @endforeach
 
 @endsection
